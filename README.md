@@ -13,7 +13,9 @@ Create an Instance with `Movie` sample database. Don't worry, it's free.
 
 ## 1. Set up `.env` based on .env.template`.
 
-Give `PORT=8000` to `nodejs/.env`
+- Give `PORT=8000` to `nodejs/.env`
+
+- Give Your Neo4J credentials based on Step 0.
 
 ## 2. Start backEnd locally
 `cd nodejs`
