@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
   min-height: 100vh;
@@ -43,8 +48,6 @@
   text-align: left;
   color: #ccc;
   font-size: calc(10px + 1.5vmin);
-  height: 80vmin;
-  overflow-y: auto;
   display: flex;
   justify-content: space-evenly;
 }
@@ -53,6 +56,36 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: flex-start;
+  height: 70vh;
+}
+
+.Filter-Block {
+  width: 50vmin;
+  height: 30vh;
+  border: 1px solid #3b6969;
+  display: block;
+  background-color: #282c34;
+}
+
+.Filter-Header {
+  background-color: #1d414b;
+  height: 8vmin;
+  padding: 0 20px;
+}
+
+.Filter-Header h1 {
+  font-size: calc(10px + 1.5vmin);
+  line-height: 8vmin;
+}
+.Filter-Body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  row-gap: 15px;
+  font-size: calc(10px + 1vmin);
 }
 
 .Button-Controller {
@@ -65,16 +98,32 @@
   cursor: pointer;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(100, 94, 94);
 }
 
 .Button-Controller:hover {
   background-color: #4aa3bc;
 }
 
+.Form-Container {
+  height: 80vmin;
+  overflow-y: scroll;
+}
+
+.Thead-Container {
+  width: 100vmin;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  background-color: #1d414b;
+  border-bottom: 1px solid #ccc;
+}
 
 .Row-Container {
+  width: 100vmin;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #e0e0e0;
@@ -83,6 +132,42 @@
 
 .Row-Container:hover {
   background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.No-Hover:hover {
+  cursor: default;
+}
+
+.Td-Long {
+  width: 100vmin;
+}
+.Td-Middle {
+  width: 50vmin;
+}
+.Td-Short {
+  width: 25vmin;
+}
+
+.Label-Container {
+  width: 50vmin;
+  height: 16vmin;
+  border: 1px solid #3b6969;
+  display: block;
+  background-color: #282c34;
+}
+.Label-Title {
+  background-color: #1d414b;
+  height: 8vmin;
+  padding: 0 20px;
+}
+.Label-Title h1 {
+  font-size: calc(10px + 1.5vmin);
+  line-height: 8vmin;
+}
+.Label-Content {
+  padding: 20px;
+  font-size: calc(10px + 1vmin);
 }
 
 .App-footer {

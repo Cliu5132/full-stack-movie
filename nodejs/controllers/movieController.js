@@ -1,4 +1,4 @@
-const { getSession, closeDriver } = require('../services/neo4jService');
+const { getSession } = require('../services/neo4jService');
 
 const getAllMovies = async (req, res) => {
   const query = `
@@ -17,7 +17,6 @@ const getAllMovies = async (req, res) => {
     // console.log(`res`, res)
     
     await session.close();
-    await closeDriver();
   } catch (e) {
     console.log(`Error in running neo4j driver: `, e);
   }
@@ -48,7 +47,6 @@ const getMoviesBetweenYears = async (req, res) => {
     });
     
     await session.close();
-    await closeDriver();
   } catch (e) {
     console.log(`Error in running neo4j driver: `, e);
   }
@@ -82,9 +80,8 @@ const getMoviesByPersonName = async (req, res) => {
     });
     
     await session.close();
-    await closeDriver();
   } catch (e) {
-    console.log(`Error in running neo4j driver: `, e);
+    console.log(`Error in running neo4j driver: `, );
   }
 }
 

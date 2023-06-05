@@ -16,7 +16,6 @@ const getSession = () => {
   catch(e){
     console.log(`Neo4j session failed: `, e);
   }
-  console.log(`Neo4j session started...`);
   return session;
 }
 

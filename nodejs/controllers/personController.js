@@ -1,4 +1,4 @@
-const { getSession, closeDriver } = require('../services/neo4jService');
+const { getSession } = require('../services/neo4jService');
 
 const getPersonsByMovieTitle = async (req, res) => {
   const params = req.query;
@@ -26,7 +26,6 @@ const getPersonsByMovieTitle = async (req, res) => {
     });
 
     await session.close();
-    await closeDriver();
   } catch (e) {
     console.log(`Error in running neo4j driver: `, e);
   }
