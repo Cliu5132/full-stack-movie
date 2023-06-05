@@ -25,7 +25,7 @@ Create an Instance with `Movie` sample database. Don't worry, it's free.
 `cd nodejs`
 `npm start`
 
-## 4. Open your frontEnd in your browswer.
+## 4. Open your frontEnd in your browser.
 
 # Postman 
 ### Collection Import Json
