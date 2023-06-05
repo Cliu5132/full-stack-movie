@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "54b40dc7-8495-4309-9bee-187cfcf622d2",
+		"name": "MovieAPP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18172544"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Movies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "720"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2d0-fVEyNzazXRU7zp99YkZJIb2aI7U\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Jun 2023 01:10:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"body\": [\n        \"The Matrix\",\n        \"The Matrix Reloaded\",\n        \"The Matrix Revolutions\",\n        \"The Devil's Advocate\",\n        \"A Few Good Men\",\n        \"Top Gun\",\n        \"Jerry Maguire\",\n        \"Stand By Me\",\n        \"As Good as It Gets\",\n        \"What Dreams May Come\",\n        \"Snow Falling on Cedars\",\n        \"You've Got Mail\",\n        \"Sleepless in Seattle\",\n        \"Joe Versus the Volcano\",\n        \"When Harry Met Sally\",\n        \"That Thing You Do\",\n        \"The Replacements\",\n        \"RescueDawn\",\n        \"The Birdcage\",\n        \"Unforgiven\",\n        \"Johnny Mnemonic\",\n        \"Cloud Atlas\",\n        \"The Da Vinci Code\",\n        \"V for Vendetta\",\n        \"Speed Racer\",\n        \"Ninja Assassin\",\n        \"The Green Mile\",\n        \"Frost/Nixon\",\n        \"Hoffa\",\n        \"Apollo 13\",\n        \"Twister\",\n        \"Cast Away\",\n        \"One Flew Over the Cuckoo's Nest\",\n        \"Something's Gotta Give\",\n        \"Bicentennial Man\",\n        \"Charlie Wilson's War\",\n        \"The Polar Express\",\n        \"A League of Their Own\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "MoviesBtwYears",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/movies-btw-years?startYear=1995&endYear=1996",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"movies-btw-years"
+					],
+					"query": [
+						{
+							"key": "startYear",
+							"value": "1995"
+						},
+						{
+							"key": "endYear",
+							"value": "1996"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "MoviesBtwYears",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/movies-btw-years?startYear=1995&endYear=1996",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"movies-btw-years"
+							],
+							"query": [
+								{
+									"key": "startYear",
+									"value": "1995"
+								},
+								{
+									"key": "endYear",
+									"value": "1996"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"63-9jiBir8q2XUZxxI+Emh/uOj3ofY\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Jun 2023 01:09:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"body\": [\n        \"Johnny Mnemonic\",\n        \"Apollo 13\",\n        \"That Thing You Do\",\n        \"The Birdcage\",\n        \"Twister\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "MoviesByPersonName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/movies-by-person-name?personName=Tom Hanks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"movies-by-person-name"
+					],
+					"query": [
+						{
+							"key": "personName",
+							"value": "Tom Hanks"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "MoviesByPersonName",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/movies-by-person-name?personName=Tom Hanks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"movies-by-person-name"
+							],
+							"query": [
+								{
+									"key": "personName",
+									"value": "Tom Hanks"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1078"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"436-Z4ZPQCFNEBLBSFRAb9hspWvoxWQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Jun 2023 02:10:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"body\": [\n        {\n            \"movieName\": \"Apollo 13\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 1995\n        },\n        {\n            \"movieName\": \"You've Got Mail\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 1998\n        },\n        {\n            \"movieName\": \"A League of Their Own\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 1992\n        },\n        {\n            \"movieName\": \"Joe Versus the Volcano\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 1990\n        },\n        {\n            \"movieName\": \"That Thing You Do\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 1996\n        },\n        {\n            \"movieName\": \"The Da Vinci Code\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 2006\n        },\n        {\n            \"movieName\": \"Cloud Atlas\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 2012\n        },\n        {\n            \"movieName\": \"Cast Away\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 2000\n        },\n        {\n            \"movieName\": \"The Green Mile\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 1999\n        },\n        {\n            \"movieName\": \"Sleepless in Seattle\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 1993\n        },\n        {\n            \"movieName\": \"The Polar Express\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 2004\n        },\n        {\n            \"movieName\": \"Charlie Wilson's War\",\n            \"connectionType\": \"ACTED_IN\",\n            \"releasedYear\": 2007\n        },\n        {\n            \"movieName\": \"That Thing You Do\",\n            \"connectionType\": \"DIRECTED\",\n            \"releasedYear\": 1996\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "PersonsByMovie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/persons-by-movie-title?movieTitle=That Thing You Do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"persons-by-movie-title"
+					],
+					"query": [
+						{
+							"key": "movieTitle",
+							"value": "That Thing You Do"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PersonsByMovie",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/persons-by-movie-title?movieTitle=That Thing You Do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"persons-by-movie-title"
+							],
+							"query": [
+								{
+									"key": "movieTitle",
+									"value": "That Thing You Do"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "250"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"fa-emrZ72mFyMALFeqVGJNrcL9jB/g\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Jun 2023 02:04:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"body\": [\n        {\n            \"personName\": \"Tom Hanks\",\n            \"connectionType\": \"ACTED_IN\"\n        },\n        {\n            \"personName\": \"Liv Tyler\",\n            \"connectionType\": \"ACTED_IN\"\n        },\n        {\n            \"personName\": \"Charlize Theron\",\n            \"connectionType\": \"ACTED_IN\"\n        },\n        {\n            \"personName\": \"Tom Hanks\",\n            \"connectionType\": \"DIRECTED\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
