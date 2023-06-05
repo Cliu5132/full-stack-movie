@@ -34,8 +34,8 @@ const getMoviesBetweenYears = async (req, res) => {
   `;
 
   const params = {
-    "startYear": parseInt(startYear),
-    "endYear": parseInt(endYear)
+    "startYear": parseInt(startYear), //#Why ParseInt?// This step is essential cause otherwise it is a string, 
+    "endYear": parseInt(endYear) //then query will miss the param and thus won't work in neo4j. #Why ParseInt?//
   }
 
   try {
@@ -54,7 +54,42 @@ const getMoviesBetweenYears = async (req, res) => {
   }
 }
 
+const getMoviesByPersonName = async (req, res) => {
+  const params = req.query;
+  const query = `
+    MATCH (m:Movie) <-[r]- (p:Person {name: $personName}) 
+    RETURN m.title AS movieName, type(r) AS connectionType, m.released AS releasedYear 
+    LIMIT 50
+  `;
+
+  try {
+    const session = getSession();
+    const result = await session.run(query, params);
+
+    const formatedResult = [] // todo: refactor to a function
+    result.records.map((record) => {
+      const formatedRecord = {
+        "movieName": record.get("movieName"),
+        "connectionType": record.get("connectionType"),
+        "releasedYear": record.get("releasedYear").low
+      }
+      formatedResult.push(formatedRecord)
+    });
+
+    res.json({
+      status: "ok",
+      body: formatedResult
+    });
+    
+    await session.close();
+    await closeDriver();
+  } catch (e) {
+    console.log(`Error in running neo4j driver: `, e);
+  }
+}
+
 module.exports = {
   getAllMovies,
   getMoviesBetweenYears,
+  getMoviesByPersonName,
 };

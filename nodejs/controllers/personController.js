@@ -11,14 +11,14 @@ const getPersonsByMovieTitle = async (req, res) => {
     const session = getSession();
     const result = await session.run(query, params);
 
-    const formatedResult = []
+    const formatedResult = [] // todo: refactor to a function
     result.records.map((record) => {
       const formatedRecord = {
         "personName": record.get("personName"),
         "connectionType": record.get("connectionType")
       }
       formatedResult.push(formatedRecord)
-    }),
+    });
 
     res.json({
       status: "ok",

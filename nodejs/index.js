@@ -2,6 +2,7 @@ const express = require('express');
 const { 
   getAllMovies,
   getMoviesBetweenYears,
+  getMoviesByPersonName,
 } = require('./controllers/movieController');
 const {
   getPersonsByMovieTitle
@@ -11,9 +12,10 @@ const { PORT } = require('./config/dotenv');
 async function init() {
   const app = express();
 
-  app.get('/movies', getAllMovies);
-  app.get('/movies-btw-years', getMoviesBetweenYears);
-  app.get('/persons-by-title', getPersonsByMovieTitle);
+  app.get('/movies', getAllMovies); // Pure Get, no params required
+  app.get('/movies-btw-years', getMoviesBetweenYears); // Send variables `startYear` and `endYear` with Get
+  app.get('/movies-by-person-name', getMoviesByPersonName); //Send variable `personName` with Get
+  app.get('/persons-by-movie-title', getPersonsByMovieTitle); //Send variable `movieTitle` with Get
 
   app.use(express.static('./static'));
 
