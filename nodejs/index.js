@@ -1,11 +1,19 @@
 const express = require('express');
-const { getMovies } = require('./controllers/movieController');
+const { 
+  getAllMovies,
+  getMoviesBetweenYears,
+} = require('./controllers/movieController');
+const {
+  getPersonsByMovieTitle
+} = require('./controllers/personController');
 const { PORT } = require('./config/dotenv');
 
 async function init() {
   const app = express();
 
-  app.get('/get', getMovies);
+  app.get('/movies', getAllMovies);
+  app.get('/movies-btw-years', getMoviesBetweenYears);
+  app.get('/persons-by-title', getPersonsByMovieTitle);
 
   app.use(express.static('./static'));
 

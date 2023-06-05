@@ -1,19 +1,17 @@
 const { getSession, closeDriver } = require('../services/neo4jService');
 
-const getMovies = async (req, res) => {
+const getAllMovies = async (req, res) => {
   const query = `
-    MATCH (movie:Movie {title:$favorite})<-[:ACTED_IN]-(actor)-[:ACTED_IN]->(rec:Movie)
-    RETURN distinct rec.title as title LIMIT 20
+    MATCH (m:Movie) RETURN distinct m.title as title LIMIT 50
   `;
-  const params = { "favorite": "The Matrix" };
 
   try {
     const session = getSession();
-    const result = await session.run(query, params);
+    const result = await session.run(query);
 
     res.json({
       status: "ok",
-      path: result.records.map((record) => record.get("title")),
+      body: result.records.map((record) => record.get("title")),
     });
 
     // console.log(`res`, res)
@@ -23,6 +21,40 @@ const getMovies = async (req, res) => {
   } catch (e) {
     console.log(`Error in running neo4j driver: `, e);
   }
-};
+}
 
-module.exports = {getMovies};
+const getMoviesBetweenYears = async (req, res) => {
+  const {
+    startYear,
+    endYear,
+  } = req.query;
+
+  const query = `
+    MATCH (m:Movie) WHERE m.released >= $startYear AND m.released <= $endYear RETURN distinct m.title as title LIMIT 50
+  `;
+
+  const params = {
+    "startYear": parseInt(startYear),
+    "endYear": parseInt(endYear)
+  }
+
+  try {
+    const session = getSession();
+    const result = await session.run(query, params);
+
+    res.json({
+      status: "ok",
+      body: result.records.map((record) => record.get("title")),
+    });
+    
+    await session.close();
+    await closeDriver();
+  } catch (e) {
+    console.log(`Error in running neo4j driver: `, e);
+  }
+}
+
+module.exports = {
+  getAllMovies,
+  getMoviesBetweenYears,
+};
