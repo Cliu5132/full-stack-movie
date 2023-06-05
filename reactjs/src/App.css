@@ -1,9 +1,11 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  background-color: #353B45;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -15,13 +17,14 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 10vmin;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin: 0 300px;
 }
 
 .App-link {
@@ -36,3 +39,45 @@
     transform: rotate(360deg);
   }
 }
+
+.App-Main {
+  margin: 0 300px;
+  border: 1px solid #0b4f62;
+  text-align: left;
+  color: #ccc;
+  font-size: calc(10px + 1.5vmin);
+  height: 80vmin;
+  overflow-y: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Row-Container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
+}
+
+.Row-Container:hover {
+  background-color: #f5f5f5;
+}
+
+.App-footer {
+  background-color: #282c34;
+  height: 10vmin;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: calc(10px + 1vmin);
+  color: gray;
+  margin: 0 300px;
+}
+
+.App-footer a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the inherited color from the parent element */
+}
+
