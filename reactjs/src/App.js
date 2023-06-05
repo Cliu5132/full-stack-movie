@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Form from './Form';
+import Controller from './Controller'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         </div>
       </header>
       <div className="App-Main">
+        <Controller />
         <Form />
       </div>
       <footer className="App-footer">
