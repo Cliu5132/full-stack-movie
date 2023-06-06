@@ -1,7 +1,11 @@
 # full-stack-movie
-Build a full stack app using the neo4j sandbox db `movie`
+Build a full stack app using the neo4j sample db `movie`
 
 Repo: https://github.com/Cliu5132/full-stack-movie
+
+# Demo via GIF
+
+![Demo](https://raw.githubusercontent.com/Cliu5132/full-stack-movie/master/resources/demo-full-stack-movie-app.gif)
 
 # Start locally
 
