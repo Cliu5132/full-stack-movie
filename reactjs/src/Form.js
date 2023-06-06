@@ -6,15 +6,14 @@ const MoviesTable = () => {
   const { movies, setPersons, setTableType } = useContext(MovieContext);
 
   const getPersonsOnMovieClick = async (movieTitle) => {
-    setTableType('Person');
-
     try {
       const url = `http://localhost:8000/persons-by-movie-title?movieTitle=${movieTitle}`;
       const response = await fetch(url);
       const data = await response.json();
       setPersons(data.body)
+      setTableType('Person');
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error in getPersonsOnMovieClick:', error);
     }
   };
 
@@ -44,15 +43,14 @@ const PersonsTable = () => {
   const { persons, setMoviesDetail, setTableType } = useContext(MovieContext);
 
   const getMoviesOnPersonClick = async (personName) => {
-    setTableType('MoviesDetail');
-
     try {
       const url = `http://localhost:8000/movies-by-person-name?personName=${personName}`;
       const response = await fetch(url);
       const data = await response.json();
       setMoviesDetail(data.body)
+      setTableType('MoviesDetail');
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error in getMoviesOnPersonClick:', error);
     }
   };
 
