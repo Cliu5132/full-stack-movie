@@ -3,6 +3,8 @@ Build a full stack app using the neo4j sandbox db `movie`
 
 Repo: https://github.com/Cliu5132/full-stack-movie
 
+Demo: https://raw.githubusercontent.com/Cliu5132/full-stack-movie/master/resources/demo-full-stack-movie-app.gif
+
 # Start locally
 
 ## 0. Create a New Instance in Neo4j
