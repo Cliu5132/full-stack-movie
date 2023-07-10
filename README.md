@@ -7,6 +7,12 @@ Repo: https://github.com/Cliu5132/full-stack-movie
 
 ![Demo](https://raw.githubusercontent.com/Cliu5132/full-stack-movie/master/resources/demo-full-stack-movie-app.gif)
 
+# Branch Management
+
+This `no-docker` branch is the source code before implementing any feature from Docker.
+
+The `master` branch will be containerized in the future.
+
 # Start locally
 
 ## 0. Create a New Instance in Neo4j
