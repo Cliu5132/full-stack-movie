@@ -9,33 +9,17 @@ Repo: https://github.com/Cliu5132/full-stack-movie
 
 # Branch Management
 
-This `no-docker` branch is the source code before implementing any feature from Docker.
+The `no-docker` branch is the source code before implementing any feature from Docker.
 
-The `master` branch will be containerized in the future.
+The `master` branch has been containerized.
 
 # Start locally
 
-## 0. Create a New Instance in Neo4j
+## 1. Git Pull this Repo
 
-Go to: https://console.neo4j.io/
+## 2. Docker-Compose Up
 
-Create an Instance with `Movie` sample database. Don't worry, it's free.
-
-## 1. Set up `.env` based on .env.template`.
-
-- Give `PORT=8000` to `nodejs/.env`
-
-- Give Your Neo4J credentials based on Step 0.
-
-## 2. Start backEnd locally
-`cd nodejs`
-`npm start`
-
-## 3. Start frontEnd locally
-`cd nodejs`
-`npm start`
-
-## 4. Open your frontEnd in your browser.
+## 3. Open your localhost:3000 in your browser.
 
 # Postman 
 ### Collection Import Json
