@@ -1,0 +1,36 @@
+version: '3'
+services:
+  reactjs:
+    build: ./reactjs
+    ports:
+      - 3000:3000
+    depends_on:
+      - nodejs
+
+  nodejs:
+    build: ./nodejs
+    ports:
+      - 8000:8000
+    depends_on:
+      - neo4j
+
+  neo4j:
+    image: neo4j:3.5
+    restart: unless-stopped
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - ./neo4j/data:/data
+      - ./neo4j/import:/import
+      - ./neo4j/conf:/conf
+      - ./neo4j/logs:/logs
+      - ./neo4j/plugins:/plugins
+    environment: 
+      - NEO4J_AUTH=neo4j/admin
+      # Raise memory limits
+      - NEO4J_dbms_memory_pagecache_size=1G
+      - NEO4J_dbms.memory.heap.initial_size=1G
+      - NEO4J_dbms_memory_heap_max__size=1G
+
+  
